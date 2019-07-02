@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: order
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+  zipkin:
+    base-url: http://10.2.26.111:9411/
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+    getProductInfoList: #方法名
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
