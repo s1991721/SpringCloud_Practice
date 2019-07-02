@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/s1991721/SpringCloud_ConfigCenter
+          username: s1991721
+          password: Ss1991721
+          basedir: /Users/mr.lin/Code/Web/MallProject/config/basedir
+  rabbitmq:
+    host: 10.2.26.111
+
+eureka:
+  client:
+    service-url:
+      defaullZone: http://localhost:8761/eureka/
+
+
+server:
+  port: 8082 #防止单点故障，多开实例
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
