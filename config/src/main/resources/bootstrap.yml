@@ -7,7 +7,7 @@ spring:
         git:
           uri: https://github.com/s1991721/SpringCloud_ConfigCenter
           username: s1991721
-          password: Ss1991721
+          password: 123456
           basedir: /Users/mr.lin/Code/Web/MallProject/config/basedir
   rabbitmq:
     host: 10.2.26.111
